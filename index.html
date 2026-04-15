@@ -6,26 +6,39 @@
 	<title>Guess The Word Game</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.css">
+	<style>
+		/* ---- Mobile letter box sizing ---- */
+		.letter-box { width: 48px; height: 48px; font-size: 1.25rem;}
+    	@media (max-width: 576px) { .letter-box { width: 40px; height: 40px; font-size: 1.1rem; } }
+    	/* ---- Hidden but focusable input for mobile keyboard ---- */
+    	.typing { position: fixed; top: -100px; opacity: 0; pointer-events: none; }
+    </style>
+
 </head>
-<body class="vh-100 bg-primary bg-opacity-25 d-flex justify-content-center align-items-center mx-auto overflow-hidden">
-		<div class="col-md-6 bg-white border border-warning rounded-5 wrapper mx-auto">
-			<h1 class="m-3 text-center">Guess The Word</h1>
-			<hr />
-			<div class="content my-3 mx-1 text-center">
-				<input type="text" class="typing position-absolute" style="z-index: -9;" maxlength="1">
-				<div class="inputs d-flex justify-content-center flex-wrap"></div>
-				<div class="m-3">
-					<h5 class="m-1"><i>Hint:</i>&emsp;<strong><span class="hints text-primary text-capitalize"></span></strong></h5>
-					<h5 class="m-1"><i>Remaining Guesses:</i>&emsp;<strong><span class="guesses text-success"></span></strong></h5>
-					<h5 class="m-1"><i>Wrong Letters:</i>&emsp;<strong><span class="wrongs text-danger"></span></strong></h5>
+<body class="min-vh-100 bg-primary bg-opacity-25 d-flex justify-content-center align-items-center px-2">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-sm-10 col-md-6 bg-white border border-warning rounded-5 p-3 wrapper">
+				<h1 class="text-center mb-3">Guess The Word</h1>
+				<hr />
+				<div class="content text-center">
+					<input type="text" class="typing" maxlength="1" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="characters" autofocus>
+					<!-- <input type="text" class="typing position-absolute" style="z-index: -9;" maxlength="1"> -->
+					<div class="inputs d-flex justify-content-center flex-wrap my-3"></div>
+					<div class="m-3">
+						<h5 class="m-1"><i>Hint:</i>&emsp;<strong><span class="hints text-primary text-capitalize"></span></strong></h5>
+						<h5 class="m-1"><i>Remaining Guesses:</i>&emsp;<strong><span class="guesses text-success"></span></strong></h5>
+						<h5 class="m-1"><i>Wrong Letters:</i>&emsp;<strong><span class="wrongs text-danger"></span></strong></h5>
+					</div>
+					<button class="btn btn-success w-50 p-3 fw-bold">Reset Game</button>
 				</div>
-				<button class="btn btn-success w-50 p-3 fw-bold">Reset Game</button>
 			</div>
 		</div>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.js"></script>
-		<script src="source.js"></script>
-		<script src="script.js"></script>
-	</body>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.5/sweetalert2.min.js"></script>
+	<script src="source.js"></script>
+	<script src="script.js"></script>
+</body>
 </html>
